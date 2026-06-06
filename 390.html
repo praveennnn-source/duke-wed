@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duke 390 - The Ultimate Corner Rocket</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0b0f12;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Poster Container System */
+        .poster-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px; /* Maintains poster aspect ratio shape */
+            margin: 40px auto;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #12161a;
+        }
+
+        .poster-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        /* Hover effect subtly zooms into the bike */
+        .poster-container:hover .poster-image {
+            transform: scale(1.02);
+        }
+
+        /* Poster Overlay for Web Interactivity */
+        .poster-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(11, 15, 18, 0.9) 0%, rgba(0,0,0,0) 40%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 80px; /* Sits cleanly below the image spec icons */
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        /* Overlay reveals when hovering over the poster */
+        .poster-container:hover .poster-overlay {
+            opacity: 1;
+        }
+
+        /* Call to Action Buttons */
+        .cta-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #ff5500; /* Signature Duke Orange tone */
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #e04b00;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 85, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #fff;
+            color: #0b0f12;
+            transform: translateY(-2px);
+        }
+
+        /* Below the fold: Detailed Spec Sections */
+        .specs-detailed {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .specs-detailed h2 {
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            font-size: 1.8rem;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .spec-card {
+            background: #161b22;
+            padding: 30px 20px;
+            border-radius: 8px;
+            border-bottom: 3px solid #ff5500;
+            transition: transform 0.3s ease;
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .spec-card h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #ff5500;
+            margin-bottom: 8px;
+        }
+
+        .spec-card p {
+            font-size: 0.85rem;
+            color: #8b949e;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.8rem;
+            color: #484f58;
+            border-top: 1px solid #21262d;
+        }
+
+        /* Responsive adjustments for smaller mobile screens */
+        @media (max-width: 600px) {
+            .poster-container {
+                margin: 10px;
+                border-radius: 6px;
+            }
+            
+            .poster-overlay {
+                padding-bottom: 65px;
+                opacity: 1; /* Keep buttons visible on touch screens */
+                background: linear-gradient(to top, rgba(11, 15, 18, 0.95) 0%, rgba(0,0,0,0) 30%);
+            }
+
+            .cta-container {
+                flex-direction: column;
+                gap: 10px;
+                width: 80%;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 10px 20px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="poster-container">
+        <img src="D:\Games\0ECBA478-7EC2-4740-8AF8-6F9E9DEB2E3C.png" alt="KTM Duke 390 Motorcycle" class="poster-image">
+        
+        <div class="poster-overlay">
+            <div class="cta-container">
+                <button class="btn btn-primary" onclick="alert('Booking feature coming soon!')">Book Test Ride</button>
+                <button class="btn btn-secondary" onclick="alert('Downloading Brochure...')">Download Brochure</button>
+            </div>
+        </div>
+    </main>
+
+    <section class="specs-detailed">
+        <h2>Technical Specification Highlights</h2>
+        <div class="specs-grid">
+            <div class="spec-card">
+                <h3>44 HP</h3>
+                <p>Maximum Power Output</p>
+            </div>
+            <div class="spec-card">
+                <h3>4.9s</h3>
+                <p>0-100 km/h Acceleration</p>
+            </div>
+            <div class="spec-card">
+                <h3>167 km/h</h3>
+                <p>Estimated Top Speed</p>
+            </div>
+            <div class="spec-card">
+                <h3>373 cc</h3>
+                <p>Liquid-Cooled Single Cylinder</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Duke 390 Fan Showcase. Built for performance enthusiasts.</p>
+    </footer>
+
+</body>
+</html>
